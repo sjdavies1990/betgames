@@ -3,9 +3,15 @@ export class Camera {
   y: number = 0
   speed: number = 10
 
-  move(dx: number, dy: number) {
-    this.x += dx * this.speed
-    this.y += dy * this.speed
+	/**
+	 * Move the Camera
+	 * @param dx x movement
+	 * @param dy y movement
+	 * @param dt delta time
+	 */
+  move(dx: number, dy: number, dt: number) {
+    this.x += dx * this.speed * dt
+    this.y += dy * this.speed * dt
   }
 
   getViewBounds(width: number, height: number, padding: number) {

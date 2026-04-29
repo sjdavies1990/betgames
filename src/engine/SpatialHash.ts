@@ -14,10 +14,8 @@ export class SpatialHash {
     const cy: number = Math.floor(obj.y / this.cellSize)
     const key: string = this.key(cx, cy)
 
-    if (!this.grid.has(key)) {
-			this.grid.set(key, [])
-    	this.grid.get(key)!.push(obj)
-		}
+		this.grid.set(key, [])
+    this.grid.get(key)!.push(obj)
   }
 
   query(bounds: { x: number; y: number; width: number; height: number }) {
